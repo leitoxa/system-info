@@ -46,18 +46,35 @@ git commit -m "Initial commit: System Monitor Telegram Bot"
 echo [OK] Коммит создан
 echo.
 
+REM Добавление remote
+set REPO_URL=https://github.com/leitoxa/system-info.git
+echo [INFO] Добавление remote репозитория...
+echo URL: %REPO_URL%
+
+git remote add origin %REPO_URL% 2>nul
+if errorlevel 1 (
+    echo [INFO] Remote origin уже существует, обновляем URL...
+    git remote set-url origin %REPO_URL%
+)
+echo [OK] Remote настроен
+echo.
+
+REM Переименование ветки в main
+echo [INFO] Переименование ветки в main...
+git branch -M main
+echo [OK] Ветка переименована
+echo.
+
 echo ========================================
 echo Репозиторий готов!
 echo ========================================
 echo.
-echo СЛЕДУЮЩИЕ ШАГИ:
-echo 1. Создайте репозиторий на GitHub
-echo 2. Скопируйте URL репозитория
-echo 3. Выполните команду:
-echo    git remote add origin https://github.com/ВАШ_USERNAME/system-monitor-bot.git
-echo 4. Выполните первый пуш:
+echo Remote URL: %REPO_URL%
+echo.
+echo СЛЕДУЮЩИЙ ШАГ:
+echo Выполните первый push командой:
 echo    git push -u origin main
 echo.
-echo Или используйте git_push.bat для регулярных обновлений
+echo Или используйте git_push.bat
 echo.
 pause
