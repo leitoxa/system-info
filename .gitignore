@@ -33,3 +33,11 @@ desktop.ini
 *.tmp
 *.bak
 *.old
+
+# Output и сборка
+output/
+*.zip
+
+# Go
+go-version/*.exe
+go-version/go.sum
