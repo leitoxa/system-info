@@ -1,0 +1,8 @@
+{
+    "telegram_token": "YOUR_BOT_TOKEN_HERE",
+    "chat_id": "YOUR_CHAT_ID_HERE",
+    "schedule_time": "08:00",
+    "monitor_all_disks": true,
+    "language": "ru",
+    "log_file": "monitor.log"
+}
